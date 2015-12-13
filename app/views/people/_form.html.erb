@@ -1,0 +1,30 @@
+<div class = 'col-lg-8'>
+  <%= form_for(@person) do |f| %>
+    <% if @person.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+        <ul>
+        <% @person.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class = 'form-group'>
+    <label>Полное имя</label>
+      <%= text_field_tag :full_name, @person.full_name, class: 'form-control' %>
+    </div>
+    <div class = 'form-group'>
+      <label>Дата рождения</label>
+      <%= text_field_tag :birth_date, @person.birth_date, class: 'form-control' %>
+    </div>
+    <div class = 'form-group'>
+      <label>Разряд</label>
+      <%= text_field_tag :rank, @person.rank, class: 'form-control' %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

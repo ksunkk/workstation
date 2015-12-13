@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Список участников</h1>
+
+<div class = 'col-lg-8'>
+  <% @people.each do |person| %>
+    <div class = 'well'>
+      <h4><%= person.full_name %></h4>
+      <br>
+      <%= person.team %>
+    </div>
+  <% end %>
+
+  </br>
+
+  <%= link_to 'New Person', new_person_path %>
+</div>
